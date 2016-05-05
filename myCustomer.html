@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<title>浏览过我的人</title>
+<script src="jquery.js"></script>
+<script src="moblieZ.js"></script>
+<script src="iscroll.js"></script>
+<script src="pullToRefresh.js"></script>
+<link href="common.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<div class="nav">浏览过我的人
+    <div class="navL icon icon1"></div>
+</div>
+<div class="viewedPeople main95 marginA " id="wrapper">
+	<ul>
+    	<li class="cardBox">
+        	<div class="card">
+                <div class="title overflowH">
+                    <div class="tag floatL">货代</div>
+                    <div class="text floatL"><span>赵六</span>&nbsp;&nbsp;&nbsp;<span>业务经理</span></div>
+                </div>
+                <div class="content">
+                    <div class="text">深圳市家孙兴物流有限公司</div>
+                    <div class="text">手机号：15841125839</div>
+                </div>
+             </div>
+        </li>
+        <li class="cardBox">
+        	<div class="card">
+                <div class="title overflowH">
+                    <div class="tag floatL">货代</div>
+                    <div class="text floatL"><span>赵六</span>&nbsp;&nbsp;&nbsp;<span>业务经理</span></div>
+                </div>
+                <div class="content">
+                    <div class="text">深圳市家孙兴物流有限公司</div>
+                    <div class="text">手机号：15841125839</div>
+                </div>
+             </div>
+        </li>
+    </ul>
+</div>
+<div class="loading loader">
+	<div class="box">
+        <div class="loader-inner ball-spin-fade-loader">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+</div>
+</body>
+<script src="common.js"></script>
+<script>
+//注释掉的是刷新代码
+$("#wrapper").css("height",$(window).height()-$("#wrapper").offset().top);
+refresher.init({
+	id:"wrapper",
+	//pullDownAction:Refresh,
+	pullUpAction:Load 																			
+	});																																							
+//function Refresh() {																
+//	setTimeout(function () {	// <-- Simulate network congestion, remove setTimeout from production!
+//		var el, li, i;																		
+//		el =document.querySelector("#wrapper ul");					
+//		//这里写你的刷新代码				
+//		document.getElementById("wrapper").querySelector(".pullDownIcon").style.display="none";		
+//		document.getElementById("wrapper").querySelector(".pullDownLabel").innerHTML="<img src='css/ok.png'/>刷新成功";																					 
+//		setTimeout(function () {
+//			wrapper.refresh();
+//			document.getElementById("wrapper").querySelector(".pullDownLabel").innerHTML="";								
+//			},1000);//模拟qq下拉刷新显示成功效果
+//		/****remember to refresh after  action completed！ ---yourId.refresh(); ----| ****/
+//	}, 1000);
+//}
+var c=1;
+function Load(){
+	if(c==1){
+	setTimeout(function () {// <-- Simulate network congestion, remove setTimeout from production!
+		var el, li, i;
+		el =document.querySelector("#wrapper ul");
+		//这里是要加载的内容
+		for (i=0; i<2; i++) {
+			li = document.createElement('li');
+			li.className = "list positionR";
+			li.innerHTML = "<li class='cardBox'>        	<div class='card'>                <div class='title overflowH'>                    <div class='tag floatL'>货代</div>                    <div class='text floatL'><span>赵六</span>&nbsp;&nbsp;&nbsp;<span>业务经理</span></div>                </div>                <div class='content'>                    <div class='text'>深圳市家孙兴物流有限公司</div>                    <div class='text'>手机号：15841125839</div>                </div>             </div>        </li>";
+			el.appendChild(li, el.childNodes[0]);
+		}
+		wrapper.refresh();/****remember to refresh after action completed！！！   ---id.refresh(); --- ****/
+	},1000);
+		};
+		refresher.info ={
+		"pullUpLable": "没有更多了",
+		"pullingUpLable": "没有更多了",
+		"loadingLable": "没有更多了"
+	};
+		c=0;
+}
+</script>
+</html>

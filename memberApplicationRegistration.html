@@ -1,0 +1,241 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<title>成员申请注册</title>
+<script src="jquery.js"></script>
+<script src="moblieZ.js"></script>
+<link href="common.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<div class="nav">成员注册申请
+    <div class="navL icon icon1"></div>
+</div>
+<div class="main95 marginA quotation">
+	<div class="list">
+    	<div class="text">公司中文名称：</div>
+        <input class="input" type="text" placeholder="请填写中文"/>
+    </div>
+    <div class="list">
+    	<div class="text">公司英文名称：</div>
+        <input class="input" type="text" placeholder="请填写英文"/>
+    </div>
+    <div class="list">
+    	<div class="text">公司注册地：</div>
+        <input class="input" type="text" placeholder="请填写注册地址"/>
+    </div>
+    <div class="list">
+    	<div class="text">公司资质：</div>
+        <input class="input" type="text" placeholder="请填写资质"/>
+    </div>
+    <div class="list">
+    	<div class="text">公司类别：</div>
+        <select id="qita2" class="input">
+        	<option>整箱</option>
+            <option>1</option>
+            <option>2</option>
+            <option>其他</option>
+        </select>
+    </div>
+    <div class="list displayN" name="qita2">
+    	<div class="text">其他：</div>
+        <input class="input" type="text" placeholder="请填写公司类别"/>
+    </div>
+    <div class="list">
+    	<div class="text">主要经营航线：</div>
+        <input class="input" type="text" placeholder="请输入航线" id="route"/>
+    </div>
+    <div class="list">
+    	<div class="text">主要经营方式：</div>
+         <div class="radio">
+            <input type="checkbox" name="b" value="option1"/>整箱
+            <input type="checkbox" name="b" value="option2"/>拼箱
+            <input type="checkbox" name="b" value="option2"/>散杂
+            <input type="checkbox" name="b" value="option2"/>危品
+            <input id="qita" type="checkbox" name="b" value="其他"/>其他
+        </div>
+    </div>
+    <div class="list displayN" name="qita">
+    	<div class="text">其他：</div>
+        <input class="input" type="text" placeholder="请输入经营方式"/>
+    </div>
+    <div class="list">
+    	<div class="text">服务特色：</div>
+        <input class="input" type="text" placeholder="请输入服务特色"/>
+    </div>
+    <div class="list">
+    	<div class="text">法人代表姓名：</div>
+        <input class="input" type="text" placeholder="请输入姓名"/>
+    </div>
+    <div class="list">
+    	<div class="text">公司成立时间：</div>
+        <input class="input" type="text" placeholder="请输入姓名"/>
+    </div>
+    <div class="list">
+    	<div class="text">平台管理员姓名：</div>
+        <input class="input" type="text" placeholder="请输入姓名"/>
+    </div>
+    <div class="list">
+    	<div class="text">管理员手机：</div>
+        <input class="input" type="text" placeholder="请输入手机号码"/>
+    </div>
+    <div class="list">
+    	<div class="text">管理员微信号：</div>
+        <input class="input" type="text" placeholder="请输入微信号"/>
+    </div>
+    <div class="list">
+    	<div class="text">密码：</div>
+        <input class="input" type="text" placeholder="请输入密码"/>
+    </div>
+    <div class="list">
+    	<div class="text">确认密码：</div>
+        <input class="input" type="text" placeholder="请再次输入密码"/>
+    </div>
+    <div class="list">
+    	<div class="text">验证码：</div> 
+        <input class="input" type="text" placeholder="请输入验证码"/>
+    </div>
+    <div class="list">
+    	<div class="text">&nbsp;</div>
+        <div class="button">
+                获取验证码
+        </div>
+    </div>
+    <div class="quotation ctrl">提交</div>
+</div>
+<div class="searchModular">
+<div class="closeSearch">
+x
+</div>
+<ul id="touchIndex">
+	<li>A</li>
+    <li>B</li>
+    <li>C</li>
+    <li>E</li>
+    <li>F</li>
+    <li>G</li>
+    <li>H</li>
+    <li>I</li>
+    <li>G</li>
+    <li>K</li>
+    <li>L</li>
+    <li>M</li>
+    <li>N</li>
+    <li>O</li>
+    <li>P</li>
+    <li>Q</li>
+    <li>R</li>
+    <li>S</li>
+    <li>T</li>
+    <li>U</li>
+    <li>V</li>
+    <li>W</li>
+    <li>X</li>
+    <li>Y</li>
+    <li>Z</li>
+    <li>☆</li>
+</ul>
+<div id="touchInstructions"></div>
+<div class="searchBox main80 marginA">
+	<div class="search" id="search">
+    	<div id="form"></div>
+    </div>
+</div>
+<div class="releaseList">
+	<div class="ctrl overflowH">
+    	<div class="g1 active floatL">热点港口</div>
+    	<div class="g2 floatL">港口列表</div>
+    </div>
+    <div class="list" id="list">
+    	<ul class="hotList">
+        	<li><a herf="#">AACHEN[亚琛]中国</a></li>
+            <li><a herf="#">AACHEN[亚琛]中国</a></li>
+        </ul>
+        <ul class="indexesList" id="demo-list">
+        	<div class="title" id="A">A</div>
+            	<li><a herf="#">AACHEN[亚琛]中国</a></li>
+                <li><a herf="#">AACHEN[亚琛]中国</a></li>
+                <li><a herf="#">AACHEN[亚琛]中国</a></li>
+                <li><a herf="#">AACHEN[亚琛]中国</a></li>
+                <li><a herf="#">AACHEN[亚琛]中国</a></li>
+                <li><a herf="#">AACHEN[亚琛]中国</a></li>
+                <li><a herf="#">AACHEN[亚琛]中国</a></li>
+            
+            <div class="title" id="B">B</div>
+           
+            	<li><a herf="#">B[亚琛]法国</a></li>
+                <li><a herf="#">B[亚琛]法国</a></li>
+                <li><a herf="#">B[亚琛]法国</a></li>
+                <li><a herf="#">B[亚琛]法国</a></li>
+                <li><a herf="#">B[亚琛]法国</a></li>
+                <li><a herf="#">B[亚琛]法国</a></li>
+            
+            <div class="title" id="C">C</div>
+           
+            	<li><a herf="#">C[亚琛]意大利</a></li>
+                <li><a herf="#">C[亚琛]意大利</a></li>
+                <li><a herf="#">C[亚琛]意大利</a></li>
+                <li><a herf="#">C[亚琛]意大利</a></li>
+                <li><a herf="#">C[亚琛]意大利</a></li>
+                <li><a herf="#">C[亚琛]意大利</a></li>
+            
+            <div class="title" id="D">D</div>
+            <li><a herf="#">D[]印度</a></li>
+            <li><a herf="#">D[]印度</a></li>
+            <li><a herf="#">D[]印度</a></li>
+            <li><a herf="#">D[]印度</a></li>
+        </ul>
+    </div>
+</div>
+</div>
+<div class="loading loader">
+	<div class="box">
+        <div class="loader-inner ball-spin-fade-loader">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+</div>
+</body>
+<script src="common.js"></script>
+<script src="AddressIndex.js"></script>
+<script>
+	$("#qita").click(function(){
+		if($(this).is(':checked')){
+		$("[name='qita']").show();
+		}else{
+		$("[name='qita']").hide();
+		}
+	});
+	$("#qita2").click(function(){
+		if($(this).val()=="其他"){
+			$("[name='qita2']").show();
+		}else{
+			$("[name='qita2']").hide();
+		}
+	});
+</script>
+<script type="text/javascript">
+var textProject;
+	$("#route").click(function(){
+		$(".searchModular").show(0,function(){
+			touch();
+			});
+		textProject = $(this);
+	});
+	$("#list a").click(function(){
+		var text = $(this).text();
+		$(".searchModular").hide();
+		textProject.val(text);
+	})
+</script>
+</html>

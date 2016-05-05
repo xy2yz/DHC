@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<title>会员申请注册</title>
+<script src="jquery.js"></script>
+<script src="moblieZ.js"></script>
+<link href="common.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<div class="nav">会员申请注册
+    <div class="navL icon icon1"></div>
+</div>
+<div class="main95 marginA quotation">
+	<div class="list">
+    	<div class="text">公司名称：</div>
+        <input class="input" type="text" placeholder="请填写公司名称"/>
+    </div>
+    <div class="list">
+    	<div class="text">个人姓名：</div>
+        <input class="input" type="text" placeholder="请填写个人姓名"/>
+    </div>
+    <div class="list">
+    	<div class="text">公司职位：</div>
+        <input class="input" type="text" placeholder="请填写公司职位"/>
+    </div>
+    <div class="list">
+    	<div class="text">公司所在地：</div>
+        <input class="input" type="text" placeholder="请填写公司所在地"/>
+    </div>
+    <div class="list">
+    	<div class="text">公司类别：</div>
+        <select id="qita2" class="select">
+        	<option>货主</option>
+            <option>1</option>
+            <option>2</option>
+            <option>其他</option>
+        </select>
+    </div>
+    <div class="list displayN" name="qita2">
+    	<div class="text">其他：</div>
+        <input class="input" type="text" placeholder="请填写公司类别"/>
+    </div>
+    <div class="list">
+    	<div class="text">手机号：</div>
+        <input class="input" type="text" placeholder="请输入手机号"/>
+    </div>
+    <div class="list">
+    	<div class="text">微信号：</div>
+        <input class="input" type="text" placeholder="请输入微信号"/>
+    </div>
+    <div class="list">
+    	<div class="text">验证码：</div>
+        <span class="positionR">
+            <input class="input" type="text" placeholder="请输入验证码"/>
+        </span>
+    </div>
+    <div class="list">
+    	<div class="text">
+        	&nbsp;
+        </div>
+        <span class="positionR">
+            <div class="button positionA">
+                获取验证码
+            </div>
+        </span>
+    </div>
+    
+</div>
+<div class="quotation ctrl">提交</div>
+<div class="loading loader">
+	<div class="box">
+        <div class="loader-inner ball-spin-fade-loader">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+</div>
+</body>
+<script src="common.js"></script>
+<script>
+$("#qita2").click(function(){
+		if($(this).val()=="其他"){
+			$("[name='qita2']").show();
+		}else{
+			$("[name='qita2']").hide();
+		}
+	});
+</script>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<title>确认订单</title>
+<script src="jquery.js"></script>
+<script src="moblieZ.js"></script>
+<link href="common.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div class="nav">确认订单
+    <div class="navL icon icon1"></div>
+</div>
+<div class="main95 marginA confirmOrder">
+	<div class="person overflowH positionR">
+    	<div class="head floatL">
+        	<div class="img">
+            	<div class=" defaultImg"></div>
+            </div>
+        </div>
+        <div class="content floatL">
+        	<div class="text">王小毛&nbsp;&nbsp;15942033654</div>
+            <div class="text">淄博帅同配货服务有限公司</div>
+        </div>
+        <div class="ctrl icon icon2_a positionA"></div>
+    </div>
+    <div class="details">
+    	<div class="title">整箱</div>
+        <ul class="text overflowH">
+        	<li>起运港：<span>DALIAN</span></li>
+            <li>目的港：<span>BUSAN</span></li>
+            <li>海运费：<span>USD225.00</span></li>
+            <li>附加费：<span>RMB100.00</span></li>
+            <li>可供舱量：<span>1fcl</span></li>
+            <li>装船时间：<span>16.01.25</span></li>
+            <li>有效期：<span>16.2.5</span></li>
+            <li>是否议价：<span>否</span></li>
+            <li class="width100">特别注明：<span>注明内容注明内容注明内容注明内容注明内容注明内容</span></li>
+        </ul>
+        <div class="personDetails overflowH">
+            <div class="head floatL">
+                <div class="img">
+                    <div class=" defaultImg"></div>
+                </div>
+            </div>
+            <div class="content floatL">
+                <div class="text">王小毛&nbsp;&nbsp;市场一部</div>
+                <div class="text">淄博帅同配货服务有限公司</div>
+            </div>
+        </div>
+    </div>
+    <div class="number">
+    	<div class="text">购买舱量</div>
+    	<div class="c" id="num">
+        	<span class="active left">-</span><span number="0" class="num">0</span><span class="right">+</span>
+        </div>
+    </div>
+</div>
+<div class="foot foot4">
+	<div class="confirm">确认下单</div>
+</div>
+<div class="loading loader">
+	<div class="box">
+        <div class="loader-inner ball-spin-fade-loader">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+</div>
+</body>
+<script src="common.js"></script>
+<script>
+//获取数量
+function num(t){
+	return t.attr("number");
+}
+//点击方法
+$("#num .right").click(function(){
+	var n = num($("#num .num"));
+	++n;
+	numX(n);
+});
+$("#num .left").click(function(){
+	var n = num($("#num .num"));
+	--n;
+	numX(n);
+});
+//数据加减
+function numX(n){
+	if(n <= 0){
+		$("#num .left").addClass("active");
+		n = 0;	
+	}else{
+		$("#num .left").removeClass("active");
+		$(".num").html(n);
+		$(".num").attr("number",n);
+	}
+}
+</script>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<title>部门管理</title>
+<script src="jquery.js"></script>
+<script src="moblieZ.js"></script>
+<link href="common.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<div class="nav">部门管理
+    <div class="navL icon icon1"></div>
+    <div class="navR">完成</div>
+</div>
+<div class="main95 marginA">
+	<div class="deparementAdd overflowH">
+    	<div class="img icon icon10_a floatL"></div>
+        <div class="text floatL">添加部门</div>
+    </div>
+    <div class="deparementDelete overflowH">
+    	<div class="img icon icon11 floatL"></div>
+        <div class="text floatL">市场一部</div>
+    </div>
+</div>
+<div class="modalBox depertmentModal">
+	<div class="modal marginA overflowH">
+        <div class="top">
+            <div class="title">添加部门</div>
+            <div class="text">请为新部门输入名称</div>
+           	<div class="inputBox">
+            	<input class="input" type="text" placeholder="请输入部门名称"/>
+            </div>
+        </div>
+        <div class="ctrl overflowH">
+        	<div class="L floatL">取消</div>
+            <div class="R floatL">确定</div>
+        </div>
+    </div>
+</div>
+<div class='modal-backdrop' style="display:none;"></div>
+<div class="loading loader">
+	<div class="box">
+        <div class="loader-inner ball-spin-fade-loader">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+</div>
+</body>
+<script src="common.js"></script>
+<script>
+//弹出框方法
+$(".deparementAdd").click(function(){
+	modal($(".modalBox"));	
+});
+//隐藏框方法
+$(".modal-backdrop").click(function(){
+	modalD($(".modalBox"));
+});
+$(".ctrl .L").click(function(){
+	modalD($(".modalBox"));
+});
+</script>
+</html>

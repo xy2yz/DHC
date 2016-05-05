@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<title>成员业务中心</title>
+<script src="jquery.js"></script>
+<script src="moblieZ.js"></script>
+<link href="common.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<div class="nav">成员业务中心
+    <div class="navR icon icon14"></div>
+    <div class="navR2 icon icon13"><span>2</span></div>
+</div>
+<div class="main90 marginA businessCenter">
+	<div class="top overflowH">
+    	<div class="headPortraitBox floatL">
+        	<div class="headPortrait img">
+            	<div class="defaultImg"></div>
+            </div>
+            <div class="ctrl">上传头像</div>
+        </div>
+        <ul class="floatL">
+        	<li>姓名：<span>张三</span></li>
+            <li>所在部门：<span>市场一部</span></li>
+            <li>成员状态：<span>已开通</span></li>
+            <li>成员级别：<span>WIFFA</span></li>
+            <li>加入时间：<span>2012-03-05</span></li>
+        </ul>
+    </div>
+    <div class="tableBox">
+    	<table class="table table-bordered">
+        	<tr>
+            	<td>个人信息</td>
+                <td>我发布过的业务</td>
+            </tr>
+            <tr>
+            	<td>我要发布</td>
+            	<td>我要邀请</td>
+            </tr>
+            <tr>
+            	<td>我的注册客户<span class="number">3</span></td>
+            	<td>浏览过我的人<span class="number">5</span></td>
+            </tr>
+            <tr>
+            	<td>对我的评价</td>
+            	<td>我的星级<span class="grade icon icon12"></span><span class="grade icon icon12"></span><span class="grade icon icon12"></span></td>
+            </tr>
+            <tr>
+            	<td>解除关系</td>
+            	<td>我的积分<span class="integral">1200</span></td>
+            </tr>
+        </table>
+    </div>
+</div>
+<div class="modalBox depertmentModal businessCenter">
+	<div class="modal marginA ">
+        <div class="top main95 marginA">
+            <div class="text">你的信息正在审核过程中，请耐心等待！暂无法操控成员中心具体内容。</div>
+           	<div class="ctrl button">
+            	确定
+            </div>
+        </div>
+    </div>
+</div>
+<div class='modal-backdrop' style="display:none;"></div>
+<div class="loading loader">
+	<div class="box">
+        <div class="loader-inner ball-spin-fade-loader">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+</div>
+</body>
+<script src="common.js"></script>
+<script>
+modal($(".modalBox"));
+</script>
+</html>

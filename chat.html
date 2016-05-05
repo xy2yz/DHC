@@ -1,0 +1,209 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<title>议价详谈</title>
+<script src="jquery.js"></script>
+<script src="moblieZ.js"></script>
+<link href="common.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div class="nav">张三
+    <div class="navL icon icon1"></div>
+    <div class="navR">进店</div>
+</div>
+<div class="chat" id="chat">
+	<div class="drop-downBox" id="drop-downBox">
+        <div class="drop-down">
+            下拉加载更多
+        </div>
+        <div class="Message">
+        <div class="time">
+            <div class="text">16/02/20</div>
+        </div>
+        <div class="messageL">
+            <div class="img">
+                <div class=" defaultImg"></div>
+            </div>
+            <div class="contentBox">
+                <div class="nickname">小红</div>
+                <div class="content">        	
+                    <div class="text">
+                        <span>这里是要聊天的内容这里是要聊天的内容这里是要聊天的内容这里是要聊天的内容这里是要聊天的内容这里是要聊天的内容这里是要聊天的内容这里是要聊天的内容这里是要聊天的内容这里是要聊天的内容</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+         <div class="messageL">
+            <div class="img">
+                <div class=" defaultImg"></div>
+            </div>
+            <div class="contentBox">
+                <div class="nickname">小红</div>
+                <div class="content">        	
+                    <div class="text">
+                        <span>这里是要聊天的内容这里是要聊天的内容这里是要聊天的内容这里是要聊天的内容这里是要聊天的内容这里是要聊天的内容这里是要聊天的内容这里是要聊天的内容这里是要聊天的内容这里是要聊天的内容</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+         <div class="messageL">
+            <div class="img">
+                <div class=" defaultImg"></div>
+            </div>
+            <div class="contentBox">
+                <div class="nickname">小红</div>
+                <div class="content">        	
+                    <div class="text">
+                        <span>这里是要聊天的内容这里是要聊天的内容这里是要聊天的内容这里是要聊天的内容这里是要聊天的内容这里是要聊天的内容这里是要聊天的内容这里是要聊天的内容这里是要聊天的内容这里是要聊天的内容</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+         <div class="messageR">
+            <div class="img">
+                <div class=" defaultImg"></div>
+            </div>
+            <div class="contentBox">
+                <div class="nickname">小红</div>
+                <div class="content">        	
+                    <div class="text">
+                        <span>这里是要聊天的内容</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
+<div class="chatFoot">
+	<div class="content">
+    	<div class="c">
+            <input />
+            <div class="ctrl">发送</div>
+        </div>
+    </div>
+</div>
+<div class="loading loader">
+	<div class="box">
+        <div class="loader-inner ball-spin-fade-loader">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+</div>
+</body>
+<script src="common.js"></script>
+<script>
+//重置样式
+var chatHeight = document.body.offsetHeight - $("#chat").offset().top - $(".chatFoot").height(); 
+$(".chat").height(chatHeight);
+//下拉加载
+// JavaScript Document
+//创建索引
+var Y;
+var y2;
+var dropdownY;
+var dropdownHeight;
+var csstransformY = 0;
+function bindTochuEvent(){
+	document.getElementById("chat").addEventListener("touchmove",ontouchmove, false);
+	document.getElementById("chat").addEventListener("touchstart",ontouchstart, false);
+	document.getElementById("chat").addEventListener("touchend", touchEndFunc, false);
+}
+function unbind(){
+	document.getElementById("chat").removeEventListener('touchmove',ontouchmove,false);
+	document.getElementById("chat").removeEventListener('touchend',touchEndFunc,false);
+	document.getElementById("chat").removeEventListener("touchend", touchEndFunc, false);
+}
+bindTochuEvent();
+//触摸开始
+function ontouchstart(event){
+	event.preventDefault();
+    var touch = event.touches[0];
+    //记录
+   	Y = touch.clientY;
+	
+}
+//触摸移动
+function ontouchmove(event){
+    var touch = event.touches[0];
+    dropdownY = touch.clientY;
+    dropdownY = Y - dropdownY;
+	$(".nav").html(dropdownY);
+	y2 = csstransformY-dropdownY;
+	$("#drop-downBox").css("transform"," translate(0px, "+y2+"px)");
+	$("#drop-downBox").css("transition-duration","0ms");
+	if($(".drop-down").attr("tag")!= 0){
+		if(y2>40){
+			$(".drop-down").html("释放加载更多");	
+		}else{
+			$(".drop-down").html("下拉加载更多");	
+		}
+	}
+	
+}
+//触摸结束
+function touchEndFunc(event){
+   $("#drop-downBox").css("transition-duration","200ms");
+   var height = $(".drop-downBox").height()-$(".chat").height();
+   csstransformY = y2;
+   if(y2<-height){
+		huidaodibu();
+   }
+   if(y2>=40){
+	  unbind();
+	  Messageloading();
+	}
+	if(y2>0&&y2<40){
+		huidaodingbu();
+	}
+  
+}
+//回到底部
+function huidaodibu(){
+	var height = $(".drop-downBox").height()-$(".chat").height();
+	$(".drop-downBox").css("transform"," translate(0px,"+-height+"px)");
+	csstransformY = -height;
+	
+}
+//回到顶部
+function huidaodingbu(){
+	$(".drop-downBox").css("transform"," translate(0px,"+0+"px)");	
+	csstransformY = 0;
+	if($(".drop-down").attr("tag")!= 0){
+		$(".drop-down").html("下拉加载更多");	
+	}
+}
+//加载消息
+function Messageloading(){
+//在这里进行判断
+	if(true){
+		$(".drop-downBox").css("transform"," translate(0px,"+40+"px)");
+		$(".drop-down").html("正在加载");
+		setTimeout('MessageState()',1000); 
+	}else{
+		$(".drop-down").html("没有更多了");
+		$(".drop-down").attr("tag","0");
+		huidaodingbu();
+		bindTochuEvent();
+	}
+}
+//加载方法
+function MessageState(){
+	$("<div class='messageR'><div class='img'>    <div class='defaultImg'></div>   </div>    <div class='contentBox'>     <div class='nickname'>小红</div>     <div class='content'>        	     <div class='text'>              <span>这里是要聊天的内容</span>            </div>       </div>     </div>    </div>").prependTo(".Message");
+	$(".drop-down").html("下拉加载更多");	
+	$(".drop-downBox").css("transform"," translate(0px,"+0+"px)");
+	csstransformY = 0;
+	bindTochuEvent();
+}
+</script>
+</html>
